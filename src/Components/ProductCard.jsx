@@ -1,4 +1,5 @@
 import React from "react";
+import style from '../Pages/pages.css'
 
 import { Navigate, useLocation, useNavigate, useParams,Link }
   from 'react-router-dom'
@@ -17,21 +18,21 @@ const ProductCard = ({ item }) => {
    
   }
   return (
-    <div data-cy={`product-card-${item.id}`}>
-      <div data-cy="product-card-name">{ item.title}</div>
-      <div data-cy="product-card-category">{ item.category}</div>
+    <div className="product-card">
+    <div  data-cy={`product-card-${item.id}`} >
+      <div className="item-id" data-cy="product-card-name">{ item.title}</div>
+      <div className="item-id" data-cy="product-card-category"><h3>{item.category}</h3></div>
       <div>
-        <img data-cy="product-card-image" width="200px" src={item.imageSrc} alt="Product" />
+        <img data-cy="product-card-image" width="300px" height='200px' src={item.imageSrc} alt="Product" />
       </div>
-      <div data-cy="product-card-price">€ { item.price}</div>
-      <div>
-        {/* Add a onClick handler for delete functionality */}
+      <div data-cy="product-card-price"><h3>₹ {item.price}</h3></div>
+      <div className="button">
         <button  onClick={()=>handleDelete(item.id)}  data-cy="delete-button">Delete Product</button>
-        {/* Link the Edit button to '/edit/:id' route, so that the user is navigate to the Edit page on button click */}
         <Link to={`/edit/${item.id}`}>
-          <button data-cy="edit-button">Edit Product</button>
-          </Link>
+          <button className="button_1" data-cy="edit-button">Edit Product</button>
+        </Link>
       </div>
+    </div>
     </div>
   );
 };

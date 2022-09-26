@@ -9,7 +9,7 @@ const Homepage = () => {
   console.log(data,'data')
   return (
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      {/* <Sidebar /> */}
       <Productpage />
     </div>
   );
