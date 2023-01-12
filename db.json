@@ -8,13 +8,6 @@
       "price": "200"
     },
     {
-      "id": 3,
-      "title": "Product 3",
-      "category": "Shoes",
-      "imageSrc": "https://images.pexels.com/photos/3281608/pexels-photo-3281608.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "price": "20.25"
-    },
-    {
       "id": 4,
       "title": "Product 4",
       "category": "Cosmetics",

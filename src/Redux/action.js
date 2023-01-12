@@ -10,7 +10,7 @@ import { ADD_PRODUCT_FAILURE, ADD_PRODUCT_REQUEST, ADD_PRODUCT_SUCCESS,
 export const getProducts = (params) =>(dispatch)=> {
     dispatch({ type: GET_PRODUCTS_REQUEST });
     
-    return axios.get("http://localhost:8080/products", params).then((res) => {
+    return axios.get("https://smoggy-blue-sweatpants.cyclic.app/products", params).then((res) => {
         dispatch({type:GET_PRODUCTS_SUCCESS,payload:res.data})
     }).catch((e) => {
         console.log(e,'error')
@@ -21,7 +21,7 @@ export const getProducts = (params) =>(dispatch)=> {
 export const addProducts = (params, id) => (dispatch) => {
     console.log(id,'id')
     dispatch({ type: ADD_PRODUCT_REQUEST });
-    return axios.post(`http://localhost:8080/products`,params)
+    return axios.post(`https://smoggy-blue-sweatpants.cyclic.app/products`,params)
         .then((res) => {
         dispatch({type:ADD_PRODUCT_SUCCESS})
         })
@@ -34,7 +34,7 @@ export const addProducts = (params, id) => (dispatch) => {
 export const editProducts = (params, id) => (dispatch) => {
     console.log(id,'id')
     dispatch({ type: EDIT_PRODUCT_REQUEST });
-    return axios.patch(`http://localhost:8080/products/${id}`,params)
+    return axios.patch(`https://smoggy-blue-sweatpants.cyclic.app/products/${id}`,params)
         .then((res) => {
         dispatch({type:EDIT_PRODUCT_SUCCESS})
         })
@@ -46,7 +46,7 @@ export const editProducts = (params, id) => (dispatch) => {
 export const deleteProducts = ( id) => (dispatch) => {
     console.log(id,'id')
     dispatch({ type: DELETE_PRODUCT_REQUEST });
-    return axios.delete(`http://localhost:8080/products/${id}`)
+    return axios.delete(`https://smoggy-blue-sweatpants.cyclic.app/products/${id}`)
         .then((res) => {
         dispatch({type:DELETE_PRODUCT_SUCCESS})
         })
