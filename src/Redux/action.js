@@ -10,7 +10,7 @@ import { ADD_PRODUCT_FAILURE, ADD_PRODUCT_REQUEST, ADD_PRODUCT_SUCCESS,
 export const getProducts = (params) =>(dispatch)=> {
     dispatch({ type: GET_PRODUCTS_REQUEST });
     
-    return axios.get("https://erin-healthy-nightingale.cyclic.app/products", params).then((res) => {
+    return axios.get("https://jade-uninterested-antelope.cyclic.app/products", params).then((res) => {
         dispatch({type:GET_PRODUCTS_SUCCESS,payload:res.data})
     }).catch((e) => {
         console.log(e,'error')
@@ -21,7 +21,7 @@ export const getProducts = (params) =>(dispatch)=> {
 export const addProducts = (params, id) => (dispatch) => {
     console.log(id,'id')
     dispatch({ type: ADD_PRODUCT_REQUEST });
-    return axios.post(`https://erin-healthy-nightingale.cyclic.app/products`,params)
+    return axios.post(`https://jade-uninterested-antelope.cyclic.app/products`,params)
         .then((res) => {
         dispatch({type:ADD_PRODUCT_SUCCESS})
         })
@@ -34,7 +34,7 @@ export const addProducts = (params, id) => (dispatch) => {
 export const editProducts = (params, id) => (dispatch) => {
     console.log(id,'id')
     dispatch({ type: EDIT_PRODUCT_REQUEST });
-    return axios.patch(`https://erin-healthy-nightingale.cyclic.app/products/${id}`,params)
+    return axios.patch(`https://jade-uninterested-antelope.cyclic.app/products/${id}`,params)
         .then((res) => {
         dispatch({type:EDIT_PRODUCT_SUCCESS})
         })
@@ -46,7 +46,7 @@ export const editProducts = (params, id) => (dispatch) => {
 export const deleteProducts = ( id) => (dispatch) => {
     console.log(id,'id')
     dispatch({ type: DELETE_PRODUCT_REQUEST });
-    return axios.delete(`https://erin-healthy-nightingale.cyclic.app/products/${id}`)
+    return axios.delete(`https://jade-uninterested-antelope.cyclic.app/products/${id}`)
         .then((res) => {
         dispatch({type:DELETE_PRODUCT_SUCCESS})
         })
